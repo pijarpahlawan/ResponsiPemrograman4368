@@ -9,19 +9,23 @@ namespace Responsi
             Karyawan karyawan1 = new Karyawan("Pijar", "21114368", 4000000);
             Karyawan karyawan2 = new Karyawan("Andi", "21115555", 6000000);
 
-            Console.WriteLine("No   NIK     Nama            Gaji Bulanan");
-            Console.WriteLine("-----------------------------------------");
-            Console.WriteLine($"{karyawan1.Nama} {karyawan1.Nik} {karyawan1.Nama} {karyawan1.GajiBulanan}");
-            Console.WriteLine($"{karyawan2.Nama} {karyawan2.Nik} {karyawan2.Nama} {karyawan2.GajiBulanan}");
+            PrintKaryawan(karyawan1, karyawan2);
             Console.WriteLine();
             karyawan1.GajiNaik();
-            Console.WriteLine("Asyik kenaikan gaji 10%");
             karyawan2.GajiNaik();
             Console.WriteLine();
+            Console.WriteLine("Asyik kenaikan gaji 10%");
+            PrintKaryawan(karyawan1, karyawan2);
+        }
+
+        static void PrintKaryawan(params Karyawan[] karyawan)
+        {
             Console.WriteLine("No   NIK     Nama            Gaji Bulanan");
             Console.WriteLine("-----------------------------------------");
-            Console.WriteLine($"{karyawan1.Nama} {karyawan1.Nik} {karyawan1.Nama} {karyawan1.GajiBulanan}");
-            Console.WriteLine($"{karyawan2.Nama} {karyawan2.Nik} {karyawan2.Nama} {karyawan2.GajiBulanan}");
+            for (int i = 0; i < karyawan.Length; i++)
+            {
+                Console.WriteLine($"{karyawan[i].Nama} {karyawan[i].Nik} {karyawan[i].Nama} {karyawan[i].GajiBulanan}");
+            }
         }
     }
 }
