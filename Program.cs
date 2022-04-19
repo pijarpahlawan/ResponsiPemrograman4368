@@ -24,7 +24,7 @@ namespace Responsi
             Console.WriteLine("-----------------------------------------");
             for (int i = 0; i < karyawan.Length; i++)
             {
-                Console.WriteLine($"{karyawan[i].Nama} {karyawan[i].Nik} {karyawan[i].Nama} {karyawan[i].GajiBulanan}");
+                Console.WriteLine($"{i + 1} {karyawan[i].Nik} {karyawan[i].Nama} {karyawan[i].GajiBulanan}");
             }
         }
     }
